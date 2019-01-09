@@ -15,15 +15,11 @@ The project is managed on a pivotal tracker board. [View the board here](https:/
 Features
 ----------------
 1. Admin can create meetups
-2. Users can create an account on Questioner
-3. Users can log into their account
+2. Users can view a specific meetup details
+3. Users can RSVP a meetup
 4. User can post a question to a specific meetup
 5. Users can upvote or downvote a question
-6. Questions are sorted based on the number of upvotes they have. This helps meetup organizers to prioritize questions most users are interseted in.
-7. Users can post comments to a specific question
-8. Admin can add images to a meetup record
-9. Admin can add tags to a meetup record
-10. Users can reset password
+6. Users can view upcoming meetups
 
 Pre-requisites
 -------------
