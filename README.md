@@ -1,5 +1,9 @@
 # ADC-Questioner-API
 
+Badges
+---------------
+[![Build Status](https://travis-ci.org/mr-pagani/ADC-Questioner-API.svg?branch=develop)](https://travis-ci.org/mr-pagani/ADC-Questioner-API)  [![Coverage Status](https://coveralls.io/repos/github/mr-pagani/ADC-Questioner-API/badge.svg?branch=develop)](https://coveralls.io/github/mr-pagani/ADC-Questioner-API?branch=develop)
+
 Summary
 ---------------
 Questioner is a platform that allows users to crowd-source questions for meetups. The admin creates meetups, and users can post questions on specific meetups.
