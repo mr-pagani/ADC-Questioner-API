@@ -23,3 +23,9 @@ def post_meet():
         meetup_id, createdOn, location, images, topic, happeningOn, tags))
 
     return response
+
+
+@meetup.route('/meetups')
+def view_meet():
+    meetups = jsonify(meetup_object.view_meetups())
+    return meetups
