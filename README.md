@@ -2,7 +2,7 @@
 
 Badges
 ---------------
-[![Build Status](https://travis-ci.org/mr-pagani/ADC-Questioner-API.svg?branch=develop)](https://travis-ci.org/mr-pagani/ADC-Questioner-API)  [![Coverage Status](https://coveralls.io/repos/github/mr-pagani/ADC-Questioner-API/badge.svg?branch=develop)](https://coveralls.io/github/mr-pagani/ADC-Questioner-API?branch=develop)
+[![Build Status](https://travis-ci.org/mr-pagani/ADC-Questioner-API.svg?branch=develop)](https://travis-ci.org/mr-pagani/ADC-Questioner-API)  [![Coverage Status](https://coveralls.io/repos/github/mr-pagani/ADC-Questioner-API/badge.svg?branch=develop)](https://coveralls.io/github/mr-pagani/ADC-Questioner-API?branch=develop)  [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 Summary
 ---------------
