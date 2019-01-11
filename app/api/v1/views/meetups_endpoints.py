@@ -1,5 +1,4 @@
-from flask import Flask, jsonify, request, Blueprint, json
-
+from flask import jsonify, request, Blueprint
 from ..models import meetup_model
 
 meetup = Blueprint('meetup', __name__, url_prefix='/api/v1')
@@ -29,3 +28,9 @@ def post_meet():
 def view_meet():
     meetups = jsonify(meetup_object.view_meetups())
     return meetups
+
+
+@meetup.route('/meetups/upcoming')
+def view_upcoming():
+    up_meets = jsonify(meetup_object.get_upcoming())
+    return up_meets
