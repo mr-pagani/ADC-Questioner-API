@@ -25,7 +25,7 @@ def post_meet():
 
 
 @meetup.route('/meetups')
-def view_meet():
+def view_meets():
     meetups = jsonify(meetup_object.view_meetups())
     return meetups
 
@@ -34,3 +34,9 @@ def view_meet():
 def view_upcoming():
     up_meets = jsonify(meetup_object.get_upcoming())
     return up_meets
+
+
+@meetup.route('/meetups/<meetup_id>')
+def view_meet(meetup_id):
+    meet = jsonify(meetup_object.get_meetup(meetup_id))
+    return meet

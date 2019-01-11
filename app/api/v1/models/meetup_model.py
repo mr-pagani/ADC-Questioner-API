@@ -44,3 +44,17 @@ class Meetup():
                         "status": 200,
                         "data": upcoming
                         }
+
+    def get_meetup(self, meetup_id):
+        val = []
+        for meetup in MEETUP_LIST:
+            if meetup['meetup_id'] == meetup_id:
+                val.insert(0, meetup)
+        if len(val) == 0:
+            return {"status": 400,
+                    "error": "Meetup with the given id not found"}
+        else:
+            return {
+                        "status": 200,
+                        "data": val
+                        }
