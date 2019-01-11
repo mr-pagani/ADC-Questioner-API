@@ -1,7 +1,6 @@
 
-
-
 MEETUP_LIST = []
+
 
 class Meetup():
     def create_meetup(self, meetup_id, createdOn, location, images, topic, happeningOn, tags):
@@ -20,3 +19,13 @@ class Meetup():
                             "status": 201,
                             "data": self.single_meet
         }
+
+
+    def view_meetups(self):
+        if len(MEETUP_LIST) == 0:
+            return {"message": "meetups not found"}
+        else:
+            return {
+                        "status": 200,
+                        "data": MEETUP_LIST
+                        }
