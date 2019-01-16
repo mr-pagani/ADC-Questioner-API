@@ -25,6 +25,27 @@ Features
 5. Users can upvote or downvote a question
 6. Users can view upcoming meetups
 
+
+
+### Available Endpoints:
+
+| Http Method | Endpoint Route                         | Endpoint Functionality      |
+| :---------- | :------------------------------------- | :-------------------------- |
+| POST        | /api/v1/meetups                        | Creates a meetup            |
+| GET         | /api/v1/meetups                        | Gets all meetups            |
+| GET         | /api/v1/meetups/meetup_id              | Gets a meetup by id         |
+| GET         | /api/v1/meetups/upcoming               | gets upcoming meetups       |
+| DELETE      | /api/v1/meetups/meetup_id              | Deletes a meetup            |
+| POST        | /api/v1/meetups/meetup_id/rsvps        | Creates an RSVP to a meetup |
+| POST        | /api/v1/questions                      | Creates a new question      |
+| GET         | /api/v1/questions                      | Gets all questions          |
+| GET         | /api/v1/questions/question_id          | Gets a question by id       |
+| DELETE      | /api/v1/questions/question_id          | Deletes a question          |
+| PATCH       | /api/v1/questions/question_id/upvote   | Upvotes a question          |
+| PATCH       | /api/v1/questions/question_id/downvote | Downvotes a question        |
+
+
+
 Pre-requisites
 -------------
 - Postman
@@ -46,7 +67,7 @@ Testing
 
 - From the terminal execute run.py
 
-- Test the endpoints with Postman
+- Test the endpoints with Postman[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/52a74d96a869744dedfe)
 
 Authors
 ----------------
