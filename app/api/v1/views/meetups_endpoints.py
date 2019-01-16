@@ -1,4 +1,4 @@
-from flask import jsonify, request, Blueprint
+from flask import jsonify, Blueprint, request
 from ..models import meetup_model
 
 meetup = Blueprint('meetup', __name__, url_prefix='/api/v1')
@@ -40,3 +40,18 @@ def view_upcoming():
 def view_meet(meetup_id):
     meet = jsonify(meetup_object.get_meetup(meetup_id))
     return meet
+
+@meetup.route('/meetups/<meetup_id>/rsvps', methods=['POST'])
+def rsvp_meet(meetup_id):
+    request_data = request.get_json()
+
+    rsvp_id = request_data.get("rsvp_id")
+    meetup_id = request_data.get("meetup_id")
+    user_id = request_data.get("user_id")
+    response = request_data.get("response")
+
+    resp = rsvp_object.create_rsvp(
+        rsvp_id, meetup_id, user_id, response)
+
+    response = Response(json.dumps(resp), 201, mimetype='application/json')
+    return response

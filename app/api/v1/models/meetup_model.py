@@ -2,7 +2,6 @@ from datetime import date, time, datetime
 
 MEETUP_LIST = []
 
-
 class Meetup():
     def create_meetup(self, meetup_id, createdOn, location, images, topic, happeningOn, tags):
         self.single_meet = {}
@@ -58,3 +57,18 @@ class Meetup():
                         "status": 200,
                         "data": val
                         }
+
+class Rsvp():
+    def create_rsvp(self, rsvp_id, meetup_id, user_id, response):
+        self.single_rsvp = {}
+
+        self.single_rsvp['rsvp_id'] = rsvp_id
+        self.single_rsvp['meetup_id'] = meetup_id
+        self.single_rsvp['user_id'] = user_id
+        self.single_rsvp['response'] = response
+
+        RSVP_LIST.append(self.single_rsvp)
+
+        return {"status": 201,
+                "data": self.single_rsvp
+                }
