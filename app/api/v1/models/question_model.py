@@ -19,3 +19,14 @@ class Question():
         return {"status": 201,
                 "data": self.single_query
                 }
+
+    def view_questions(self):
+        if len(QUESTION_LIST) == 0:
+            return {"status": 404,
+                    "message": "questions not found"
+                    }
+        else:
+            return {
+                    "status": 200,
+                    "data": QUESTION_LIST
+                    }

@@ -26,3 +26,14 @@ def post_question():
         return Response(resp, 404, mimetype='application/json')
     else:
         return Response(resp, 201, mimetype='application/json')
+
+
+@question.route('/questions')
+def get_questions():
+    questions = json.dumps(question_object.view_questions())
+
+    x = json.loads(questions)
+    if x['status'] == 404:
+        return Response(questions, 404, mimetype='application/json')
+    else:
+        return Response(questions, 200, mimetype='application/json')
