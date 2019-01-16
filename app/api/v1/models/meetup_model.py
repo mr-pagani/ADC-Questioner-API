@@ -2,7 +2,6 @@ from datetime import date, time, datetime
 
 MEETUP_LIST = []
 
-
 class Meetup():
     def create_meetup(self, meetup_id, createdOn, location, images, topic, happeningOn, tags):
         self.single_meet = {}

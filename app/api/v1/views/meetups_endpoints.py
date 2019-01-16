@@ -1,4 +1,4 @@
-from flask import jsonify, request, Blueprint
+from flask import jsonify, Blueprint, request
 from ..models import meetup_model
 
 meetup = Blueprint('meetup', __name__, url_prefix='/api/v1')
