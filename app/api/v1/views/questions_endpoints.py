@@ -37,3 +37,13 @@ def get_questions():
         return Response(questions, 404, mimetype='application/json')
     else:
         return Response(questions, 200, mimetype='application/json')
+
+@question.route('/questions/<int:question_id>')
+def get_question_by_id(question_id):
+    qstn = json.dumps(question_object.get_question(question_id))
+
+    x = json.loads(qstn)
+    if x['status'] == 404:
+        return Response(qstn, 404, mimetype='application/json')
+    else:
+        return Response(qstn, 200, mimetype='application/json')
