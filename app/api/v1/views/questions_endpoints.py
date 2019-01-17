@@ -47,3 +47,9 @@ def get_question_by_id(question_id):
         return Response(qstn, 404, mimetype='application/json')
     else:
         return Response(qstn, 200, mimetype='application/json')
+
+@question.route('/questions/<int:question_id>/upvote', methods=['PATCH'])
+def upvote(question_id):
+    resp = question_object.upvote(question_id)
+    response = Response(json.dumps(resp), 200, mimetype='application/json')
+    return response
