@@ -1,5 +1,5 @@
 from flask import request, Blueprint, Response, json
-from ..models import question_model
+from ..models import question_model 
 
 question = Blueprint('question', __name__, url_prefix='/api/v1')
 

@@ -1,6 +1,5 @@
 QUESTION_LIST = []
 
-
 class Question():
     def create_question(
                         self, question_id, createdOn, createdBy, meetup, title,
