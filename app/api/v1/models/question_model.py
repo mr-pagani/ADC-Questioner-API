@@ -1,4 +1,6 @@
+
 QUESTION_LIST = []
+
 
 class Question():
     def create_question(
@@ -24,11 +26,12 @@ class Question():
             return {"status": 404,
                     "message": "questions not found"
                     }
+
         else:
             return {
                     "status": 200,
                     "data": QUESTION_LIST
-                    }
+                        }
 
     def get_question(self, question_id):
         question_item = [question for question in QUESTION_LIST if question["question_id"] == question_id]
@@ -54,7 +57,6 @@ class Question():
             if question["question_id"] == question_id:
                 question["votes"] = question["votes"] - 1
             return question
-
 
     def delete_question(self, question_id):
         for question in QUESTION_LIST:
