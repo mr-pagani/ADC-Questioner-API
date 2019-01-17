@@ -41,6 +41,12 @@ def view_meet(meetup_id):
     meet = jsonify(meetup_object.get_meetup(meetup_id))
     return meet
 
+@meetup.route('/meetups/<meetup_id>', methods=['DELETE'])
+def del_meet(meetup_id):
+    resp = meetup_object.delete_meetup(meetup_id)
+    response = Response(json.dumps(resp), 200, mimetype='application/json')
+    return response
+
 @meetup.route('/meetups/<meetup_id>/rsvps', methods=['POST'])
 def rsvp_meet(meetup_id):
     request_data = request.get_json()
