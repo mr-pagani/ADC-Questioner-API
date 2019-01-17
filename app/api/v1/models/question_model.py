@@ -43,3 +43,9 @@ class Question():
                        "error": "Question with the given id not found"}
 
         return res
+
+    def upvote(self, question_id):
+        for question in QUESTION_LIST:
+            if question["question_id"] == question_id:
+                question["votes"] = question["votes"] + 1
+            return question
