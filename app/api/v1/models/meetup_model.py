@@ -1,9 +1,14 @@
-from datetime import date, time, datetime
+from datetime import datetime
+
 
 MEETUP_LIST = []
 
+RSVP_LIST = []
+
+
 class Meetup():
-    def create_meetup(self, meetup_id, createdOn, location, images, topic, happeningOn, tags):
+    def create_meetup(self, meetup_id, createdOn, location, images, topic,
+                      happeningOn, tags):
         self.single_meet = {}
 
         self.single_meet['meetup_id'] = meetup_id
@@ -15,15 +20,16 @@ class Meetup():
         self.single_meet['tags'] = tags
 
         MEETUP_LIST.append(self.single_meet)
-        return {
-                            "status": 201,
-                            "data": self.single_meet
-        }
-
+        return {"status": 201,
+                "data": self.single_meet
+                }
 
     def view_meetups(self):
         if len(MEETUP_LIST) == 0:
-            return {"message": "meetups not found"}
+
+            return {"status": 404,
+                    "message": "meetups not found"}
+
         else:
             return {
                         "status": 200,
@@ -33,10 +39,12 @@ class Meetup():
     def get_upcoming(self):
         upcoming = []
         for meetup in MEETUP_LIST:
-            if datetime.strptime(meetup['happeningOn'], '%d %b %Y') > datetime.today():
+            if datetime.strptime(meetup['happeningOn'],
+                                 '%d %b %Y') > datetime.today():
                 upcoming.insert(0, meetup)
         if len(upcoming) == 0 or len(MEETUP_LIST) == 0:
-            return {"message": "meetups not found"}
+            return {"status": 404,
+                    "message": "meetups not found"}
 
         else:
             return {
@@ -50,7 +58,7 @@ class Meetup():
             if meetup['meetup_id'] == meetup_id:
                 val.insert(0, meetup)
         if len(val) == 0:
-            return {"status": 400,
+            return {"status": 404,
                     "error": "Meetup with the given id not found"}
         else:
             return {
