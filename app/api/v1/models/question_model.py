@@ -30,3 +30,16 @@ class Question():
                     "status": 200,
                     "data": QUESTION_LIST
                     }
+
+    def get_question(self, question_id):
+        question_item = [question for question in QUESTION_LIST if question["question_id"] == question_id]
+        if question_item:
+
+                res = {"status": 200,
+                       "data": question_item
+                        }
+        else:
+                res = {"status": 404,
+                       "error": "Question with the given id not found"}
+
+        return res
