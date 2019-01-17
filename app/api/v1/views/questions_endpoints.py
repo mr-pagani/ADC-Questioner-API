@@ -1,5 +1,5 @@
 from flask import request, Blueprint, Response, json
-from ..models import question_model
+from ..models import question_model 
 
 question = Blueprint('question', __name__, url_prefix='/api/v1')
 
@@ -53,3 +53,9 @@ def upvote(question_id):
     resp = question_object.upvote(question_id)
     response = Response(json.dumps(resp), 200, mimetype='application/json')
     return response
+
+@question.route('/questions/<int:question_id>/downvote', methods=['PATCH'])
+def downvote(question_id):
+        resp = question_object.downvote(question_id)
+        response = Response(json.dumps(resp), 200, mimetype='application/json')
+        return response

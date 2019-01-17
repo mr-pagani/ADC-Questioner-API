@@ -1,6 +1,5 @@
 QUESTION_LIST = []
 
-
 class Question():
     def create_question(
                         self, question_id, createdOn, createdBy, meetup, title,
@@ -48,4 +47,10 @@ class Question():
         for question in QUESTION_LIST:
             if question["question_id"] == question_id:
                 question["votes"] = question["votes"] + 1
+            return question
+
+    def downvote(self, question_id):
+        for question in QUESTION_LIST:
+            if question["question_id"] == question_id:
+                question["votes"] = question["votes"] - 1
             return question
