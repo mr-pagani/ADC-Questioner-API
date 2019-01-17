@@ -58,6 +58,20 @@ class Meetup():
                         "data": val
                         }
 
+    def delete_meetup(self, meetup_id):
+        i = 0
+        for meetup in MEETUP_LIST:
+            if meetup["meetup_id"] == meetup_id:
+                MEETUP_LIST.pop(i)
+
+                return {"status": 200,
+                        "message": "delete successful"}
+            i += 1
+            return {"status": 404,
+                    "error": "Meetup with the id provided was not found"
+                    }
+
+
 class Rsvp():
     def create_rsvp(self, rsvp_id, meetup_id, user_id, response):
         self.single_rsvp = {}
