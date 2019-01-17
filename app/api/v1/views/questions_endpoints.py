@@ -1,5 +1,5 @@
 from flask import request, Blueprint, Response, json
-from ..models import question_model 
+from ..models import question_model
 
 question = Blueprint('question', __name__, url_prefix='/api/v1')
 
@@ -59,3 +59,13 @@ def downvote(question_id):
         resp = question_object.downvote(question_id)
         response = Response(json.dumps(resp), 200, mimetype='application/json')
         return response
+
+@question.route('/questions/<int:question_id>', methods=['DELETE'])
+def del_question(question_id):
+    resp = json.dumps(question_object.delete_question(question_id))
+
+    x = json.loads(resp)
+    if x['status'] == 404:
+        return Response(resp, 404, mimetype='application/json')
+    else:
+        return Response(resp, 200, mimetype='application/json')

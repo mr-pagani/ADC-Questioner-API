@@ -54,3 +54,16 @@ class Question():
             if question["question_id"] == question_id:
                 question["votes"] = question["votes"] - 1
             return question
+
+
+    def delete_question(self, question_id):
+        for question in QUESTION_LIST:
+            if question["question_id"] == question_id:
+                QUESTION_LIST.remove(question)
+                return {"status": 204,
+                        "Message": "Question successfuly deleted"
+                        }
+            else:
+                return {"status": 404,
+                        "error": "Question with the id provided was not found"
+                        }
